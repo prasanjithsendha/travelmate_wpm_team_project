@@ -22,10 +22,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.get('/location1', (req, res) => {
+  res.render('location1'); // Make sure 'location1.pug' exists in your views directory
+});
+
+app.get('/location2', (req, res) => {
+  res.render('location2'); // Make sure 'location2.pug' exists in your views directory
+});
+
+app.get('/location3', (req, res) => {
+  res.render('location3'); // Make sure 'location3.pug' exists in your views directory
+});
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
